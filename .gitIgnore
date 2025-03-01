@@ -1,0 +1,14 @@
+# Ignore compiled files and node_modules
+dist/
+node_modules/
+
+# Ignore generated PDFs
+*.pdf
+report-*.pdf
+
+# Ignore test results
+/tests/*.log
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
