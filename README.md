@@ -46,6 +46,27 @@ async function createPDF() {
     fontType: "times",
     fontSize: 14,
     pageNumbering: true,
+    header: {
+      text: "Company Financial Report",
+      align: "center",
+      fontSize: 16,
+      color: [0, 0, 0],
+    },
+    footer: {
+      text: "Confidential Document",
+      align: "right",
+      fontSize: 10,
+      color: [100, 100, 100],
+    },
+    images: [
+      {
+        path: "path/to/local/image.png",
+        x: 50,
+        y: 100,
+        width: 200,
+        height: 150,
+      },
+    ],
   });
 
   console.log("✅ PDF Created:", outputPath);
@@ -62,16 +83,44 @@ createPDF();
 - **📌 Header & Footer Support**
 - **🖋 Custom Fonts & Styling**
 - **🔢 Automatic Page Numbering**
+- **🎨 Custom Colors & Font Sizes**
 
 ## 🛠 Configuration Options
 
-| Option          | Type    | Default    | Description                           |
-| --------------- | ------- | ---------- | ------------------------------------- |
-| `format`        | String  | "a4"       | Page format ("a4", "letter", "legal") |
-| `orientation`   | String  | "portrait" | Page layout ("portrait", "landscape") |
-| `fontType`      | String  | "times"    | Font type                             |
-| `fontSize`      | Number  | 14         | Text size in points                   |
-| `pageNumbering` | Boolean | `true`     | Adds page numbers                     |
+| Option          | Type    | Default    | Description                                     |
+| --------------- | ------- | ---------- | ----------------------------------------------- |
+| `format`        | String  | "a4"       | Page format ("a4", "letter", "legal")           |
+| `orientation`   | String  | "portrait" | Page layout ("portrait", "landscape")           |
+| `fontType`      | String  | "times"    | Font type                                       |
+| `fontSize`      | Number  | 14         | Text size in points                             |
+| `pageNumbering` | Boolean | `true`     | Adds page numbers                               |
+| `header`        | Object  | `null`     | Custom header text, alignment, font size, color |
+| `footer`        | Object  | `null`     | Custom footer text, alignment, font size, color |
+| `images`        | Array   | `[]`       | Embed images (URLs or local paths)              |
+
+### **Header/Footer Object Structure:**
+
+```js
+{
+  text: "Report Header", // Text for header/footer
+  align: "center", // Alignment ("left", "center", "right")
+  fontSize: 14, // Font size in points
+  color: [0, 0, 0], // RGB color array
+}
+```
+
+### **Image Object Structure:**
+
+```js
+{
+  path: "path/to/image.png", // Local image path (if applicable)
+  url: "https://example.com/image.jpg", // Remote image URL
+  x: 50, // X-coordinate in points
+  y: 100, // Y-coordinate in points
+  width: 200, // Image width in points
+  height: 150 // Image height in points
+}
+```
 
 ## 📝 License
 
