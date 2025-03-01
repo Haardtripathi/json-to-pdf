@@ -12,13 +12,13 @@
 ## 📦 Installation
 
 ```sh
-npm install json-to-pdf-lib
+npm install json-to-pdf
 ```
 
 or if using **Yarn**:
 
 ```sh
-yarn add json-to-pdf-lib
+yarn add json-to-pdf
 ```
 
 ## 🚀 Usage
@@ -26,7 +26,7 @@ yarn add json-to-pdf-lib
 ### **1️⃣ Import & Call `generatePDF`**
 
 ```js
-const { generatePDF } = require("json-to-pdf-lib");
+const { generatePDF } = require("json-to-pdf");
 
 async function createPDF() {
   const jsonData = {
